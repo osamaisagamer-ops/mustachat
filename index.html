@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Musta Chat</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="fav.png" type="image/png">
+</head>
+<body>
+<div class="chat-container">
+    <!-- Chat Box -->
+    <div class="chat-box">
+        <div id="messages"></div>
+        <div class="input-area">
+            <input id="nameInput" placeholder="Your name" />
+            <input id="msgInput" placeholder="Type your message..." />
+            <!-- The Send button now uses the Unicode arrow "▶" -->
+            <button id="sendBtn">▶</button>
+        </div>
+        <div id="commandSuggestions" class="suggestions"></div>
+    </div>
+
+    <!-- User List -->
+    <div class="user-list">
+        <h4>Users</h4>
+        <div id="users"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

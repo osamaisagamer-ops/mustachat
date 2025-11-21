@@ -1,0 +1,206 @@
+/* Reset & body */
+body {
+    margin: 0;
+    background: #0d0d0d;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.chat-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Chat Box */
+.chat-box {
+    width: 450px;
+    max-width: 100%;
+    height: 500px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Messages */
+#messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Individual message */
+.message {
+    background: #333;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+/* System & highlights */
+.system {
+    color: #f39c12;
+    font-style: italic;
+}
+.highlight {
+    background: #ffeb3b;
+    color: #000;
+    font-weight: bold;
+    border: 1px solid #ffc107;
+}
+
+/* Admin messages glow brighter */
+.adminMsg {
+    background: #ff1a1a;
+    color: white;
+    font-weight: bold;
+    border: 2px solid red;
+    box-shadow: 0 0 15px red;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px red; }
+    to { box-shadow: 0 0 20px #ff4d4d; }
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    padding: 10px;
+    background: #111;
+}
+
+input {
+    padding: 10px;
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 8px;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+#nameInput {
+    width: 100px;
+    margin-right: 10px;
+}
+
+#msgInput {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Send Button Styling (FIXED) */
+button {
+    /* Adjusted padding for a square-ish button ideal for the arrow icon */
+    padding: 10px; 
+    width: 40px; /* Give it a fixed size to ensure it's square */
+    background: #3b82f6;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-size: 16px; 
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background: #60a5fa;
+    transform: translateY(-1px);
+}
+
+button:active {
+    background: #2563eb;
+    transform: translateY(1px);
+}
+
+/* Suggestions */
+.suggestions {
+    background: #222;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-top: 1px solid #444;
+    display: none;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.suggestions div {
+    margin: 3px 0;
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+
+.suggestions div:hover {
+    background: #555;
+}
+
+/* User list */
+.user-list {
+    width: 150px;
+    max-width: 100%;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 10px;
+    height: 500px;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.user-list h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #3b82f6;
+    border-bottom: 1px solid #3b82f6;
+    padding-bottom: 5px;
+}
+
+.user-list div {
+    padding: 3px 0;
+    color: #bbb;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 650px) {
+    .chat-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .chat-box, .user-list {
+        width: 90%;
+        max-width: 90%;
+    }
+    
+    .chat-box {
+        height: 400px;
+    }
+    
+    .user-list {
+        height: 200px;
+    }
+}
